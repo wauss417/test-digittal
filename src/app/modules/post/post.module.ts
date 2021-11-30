@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 
+import { MatCardModule } from '@angular/material/card';
 
 /* Shared module */
 import { SharedModule } from '@sharedModule';
@@ -13,6 +13,8 @@ import { ListComponent } from './components/list/list.component';
   declarations: [ListComponent],
   imports: [
     SharedModule,
+    PostRoutingModule,
+    MatCardModule
   ]
 })
 export class PostModule { }
