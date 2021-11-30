@@ -5,6 +5,6 @@
 export interface Post {
     user_id: number;
     id: number;
-    titler: string;
+    title: string;
     body: string
 }
