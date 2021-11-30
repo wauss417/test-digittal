@@ -1,57 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
 
-* {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+html, body {
+    height: 100%;
 }
 
 body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     margin: 0;
     min-height: 100%;
     font-size: 15px;
     line-height: 26px;
 }
 
-.header-container {
-    position: sticky;
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+
+
 .header-container {
+    position: sticky;
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 1%);
+    height: 100px;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 999;
-}
-
-.nav-bar {
-    height: 130px;
-    padding: 35px 75px;
-    background-color: #fff;
-}
-
-.toolbar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
     background-color: #1976d2;
-    color: white;
-    font-weight: 600;
 }
+
+
 
 
 .content {
     display: flex;
-    margin: 82px auto 32px;
     padding: 0 16px;
-    max-width: 960px;
     flex-direction: column;
     align-items: center;
+}
+
+.wrapper {
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+    grid-auto-columns: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    -ms-grid-columns: 1.75fr 1fr;
+    grid-template-columns: 1.75fr 1fr;
+    -ms-grid-rows: auto auto;
+    grid-template-rows: auto auto;
 }
 
 footer {
