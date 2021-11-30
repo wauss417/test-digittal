@@ -1,1 +1,54 @@
-<p>details works!</p>
+<h2>Post details</h2>
+
+<div *ngIf="!loading && post !== null" class="post-details">
+
+    <!-- Post data -->
+    <div class="post-data">
+        <div class="input-wrapper">
+            <label for="title">Title</label>
+            <input type="text" [(ngModel)]="post.title" disabled name="title" id="title">
+        </div>
+
+        <div class="input-wrapper">
+            <label for="body">Content</label>
+            <textarea rows="10" cols="50" [(ngModel)]="post.body" disabled name="body" id="body"></textarea>
+        </div>
+    </div>
+
+    <div class="post.user">
+        <!-- User data -->
+        <p>
+            <span class="text-bold">Username:</span> {{ user.username }} 
+            <span class="muted-text">({{ user.name }})</span>
+        </p>
+
+        <p> <span class="text-bold">Address:</span> {{ user.address.street }} , {{ user.address.suite }}, {{ user.address.city }} 
+            ({{ user.address.zipcode }})
+        </p>
+        <!-- Contact data -->
+        <h3>Contact</h3>
+        <p>
+            <span class="text-bold">Phone:</span> {{ user.phone }} 
+            <span class="text-bold">Email:</span> {{ user.email}} 
+            <span class="text-bold">Website:</span>  {{ user.website }}
+        </p>
+        <!-- Company data -->
+        <h3>Company</h3>
+        <span>{{ user.company.name }}</span> ({{ user.company.bs}} )
+    </div>
+
+    <h2>Comments</h2>
+    <!-- Comment list -->
+    <div class="post-comments">
+        <ng-container *ngFor="let comment of comments">
+            <p> <span class="text-bold">{{ comment.email }}:</span> {{ comment.title }} </p>
+            <p> {{ comment.body }} </p>
+            <mat-divider></mat-divider>
+        </ng-container>
+    </div>
+
+</div>
+<!-- Error message -->
+<ng-container *ngIf="!loading && post === null">
+    Cant fecth post data
+</ng-container>
