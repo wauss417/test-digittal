@@ -15,7 +15,21 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+        "@sharedModule": [
+          "src/app/shared/shared.module.ts"
+        ],
+        "@models": [
+          "src/app/models/"
+        ],
+        "@constants": [
+          "src/app/constants/"
+        ],
+        "@services": [
+          "src/app/services/"
+        ]
+      },
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false
