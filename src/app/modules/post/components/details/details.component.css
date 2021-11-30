@@ -13,5 +13,11 @@
 .post-comments{
     grid-column-start: 1;
     grid-column-end: 3;
+}
 
+@media screen and (max-width: 767px) {
+    .post-details {
+        display: flex;
+        flex-direction: column;
+    }
 }
