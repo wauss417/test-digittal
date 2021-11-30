@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PostRoutingModule } from './post-routing.module';
 
+/* Shared module */
+import { SharedModule } from '@sharedModule';
+// module routing
+import { PostRoutingModule } from './post-routing.module';
+// Module component
+import { ListComponent } from './components/list/list.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [ListComponent],
   imports: [
-    CommonModule,
-    PostRoutingModule
+    SharedModule,
   ]
 })
 export class PostModule { }
