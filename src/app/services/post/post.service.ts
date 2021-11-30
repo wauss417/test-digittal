@@ -14,6 +14,7 @@ import {
 @Injectable({
     providedIn: 'root'
 })
+
 export class PostService {
 
     constructor(
@@ -21,9 +22,9 @@ export class PostService {
     ) { }
 
     /**
-     * Resquest for posts
+     * Request for posts
      *
-     * @returns {Observable<StripeUserCard[]>}
+     * @returns {Observable<Post[]>}
      */
     getAllPost(): Observable<Post[]> {
         const url = `${ApiConstants.baseUrl}/${ApiConstants.post}`;
@@ -38,10 +39,10 @@ export class PostService {
     }
 
     /**
-    * Resquest for user's posts
+    * Request for user's posts
     *
     * @param {number} user user ID
-    * @returns {Observable<StripeUserCard[]>}
+    * @returns {Observable<Post[]>}
     */
     getUserPost(user: number): Observable<Post[]> {
         const url = `${ApiConstants.baseUrl}/${ApiConstants.post}?userId=${user}`;
@@ -56,10 +57,10 @@ export class PostService {
     }
 
     /**
-    * Resquest for create a post
+    * Request for create a post
     *
     * @param {Post} data new post data
-    * @returns {Observable<StripeUserCard[]>}
+    * @returns {Observable<Post>}
     */
     createPost(data: Partial<Post>): Observable<Post> {
         const url = `${ApiConstants.baseUrl}/${ApiConstants.post}`;
@@ -75,12 +76,12 @@ export class PostService {
     }
 
     /**
-    * Resquest for edit a post
+    * Request for edit a post
     *
     * @param {Post} data new post data
-    * @returns {Observable<StripeUserCard[]>}
+    * @returns {Observable<Post>}
     */
-    aditPost(data: Post): Observable<Post> {
+    editPost(data: Post): Observable<Post> {
         const url = `${ApiConstants.baseUrl}/${ApiConstants.post}`;
         const params = data
         return this.http.put(url, params, { observe: 'response' }).pipe(
