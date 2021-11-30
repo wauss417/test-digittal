@@ -21,7 +21,9 @@ body {
 }
 
 
-
+/**
+    Header  
+ */
 .header-container {
     position: sticky;
     box-shadow: 0 10px 20px 0 rgb(0 0 0 / 1%);
@@ -33,9 +35,9 @@ body {
     background-color: #1976d2;
 }
 
-
-
-
+/**
+    Content
+ */
 .content {
     display: flex;
     padding: 0 16px;
@@ -54,8 +56,12 @@ body {
     grid-template-columns: 1.75fr 1fr;
     -ms-grid-rows: auto auto;
     grid-template-rows: auto auto;
+    margin: 2rem 0rem;
 }
 
+/**
+    footer
+ */
 footer {
     margin-top: 8px;
     display: flex;
@@ -66,4 +72,40 @@ footer {
 footer a {
     display: flex;
     align-items: center;
+}
+
+/* Global */
+.text-bold{
+    font-weight: 600;
+}
+
+.muted-text{
+    color: gray;
+}
+
+.input-wrapper {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 1rem;
+}
+
+.input-wrapper label{
+    font-weight: 600;
+}
+
+.input-wrapper textarea, .input-wrapper input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-wrapper input {
+    height: 45px;
+}
+
+.form-message{
+    font-weight: 600;
+    margin: 1rem 0rem;
 }
