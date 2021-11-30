@@ -1,0 +1,17 @@
+:host{
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    padding: 2rem;
+    color: white;
+}
+
+.title {
+    width: 25%;
+    font-size: 2rem;
+}
+
+.menu a {
+    color: white;
+    margin-right: 2.5rem;
+}
