@@ -1,1 +1,21 @@
-<p>create works!</p>
+<h2>New post</h2>
+
+<form #f="ngForm" (ngSubmit)="createPost(f.value)">
+
+    <div class="input-wrapper">
+        <label for="title">Title</label>
+        <input type="text" ngModel name="title" id="title">
+    </div>
+
+    <div class="input-wrapper">
+        <label for="body">Content</label>
+        <textarea rows="10" cols="50" ngModel name="body" id="body"></textarea>
+    </div>
+
+    <button mat-raised-button color="primary" submit>Create</button>
+
+</form>
+
+<div *ngIf="f.submitted && post !== null" class="form-message">
+    New post created with {{ post.id }} id
+</div>
