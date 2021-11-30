@@ -3,7 +3,7 @@
  */
 
 export interface Post {
-    user_id: number;
+    userId: number;
     id: number;
     title: string;
     body: string
