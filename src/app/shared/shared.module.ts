@@ -4,13 +4,15 @@ import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // Material
 import { MatButtonModule } from '@angular/material/button'
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDividerModule } from '@angular/material/divider';
 
 const importsModulesShared = [
     CommonModule,
     FormsModule,
     MatButtonModule,
     MatFormFieldModule,
+    MatDividerModule,
     ReactiveFormsModule,
     RouterModule
 ];
