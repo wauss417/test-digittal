@@ -1,9 +1,14 @@
-mat-card{
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+mat-card {
     margin-bottom: 1rem;
 }
 
-mat-card-actions{
+mat-card-actions {
     display: flex;
     justify-content: space-between;
-    
 }
