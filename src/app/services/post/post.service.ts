@@ -4,6 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 // App models
 import {
+    Comment,
     Post
 } from '@models';
 // App constants
@@ -31,6 +32,25 @@ export class PostService {
         return this.http.get(url, { observe: 'response' }).pipe(
             map((data: any) => {
                 return (data.body) as Post[];
+            }),
+            catchError((error: any) => {
+                return throwError(error);
+            })
+        );
+    }
+
+    /**
+     * Request for get post by id 
+     *
+     *      
+     * @param {number} id post id
+     * @returns {Observable<Post[]>}
+     */
+    getPost(id: number): Observable<Post> {
+        const url = `${ApiConstants.baseUrl}/${ApiConstants.post}/${id}`;
+        return this.http.get(url, { observe: 'response' }).pipe(
+            map((data: any) => {
+                return (data.body) as Post;
             }),
             catchError((error: any) => {
                 return throwError(error);
@@ -94,4 +114,21 @@ export class PostService {
         );
     }
 
+    /**
+     * Request to get all post comment
+     *
+     * @param {number} id post id
+     * @returns {Observable<Comment[]>}
+     */
+    getPostComments(id: number): Observable<Comment[]> {
+        const url = `${ApiConstants.baseUrl}/${ApiConstants.post}/${id}/${ApiConstants.comment}`;
+        return this.http.get(url, { observe: 'response' }).pipe(
+            map((data: any) => {
+                return (data.body) as Comment[];
+            }),
+            catchError((error: any) => {
+                return throwError(error);
+            })
+        );
+    }
 }
