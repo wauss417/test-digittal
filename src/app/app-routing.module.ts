@@ -22,12 +22,12 @@ const routes: Routes = [
     },
     {
         path: '**',
-        redirectTo: ''
+        redirectTo: 'post'
     }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy', initialNavigation: 'disabled' })],
+    imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
