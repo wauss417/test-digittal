@@ -19,12 +19,10 @@ const services = [ ];
  */
 
 import {
-    FooterComponent,
     HeaderComponent
 } from './components';
 
 const componentsNavigation = [
-    FooterComponent,
     HeaderComponent
 ];
 
